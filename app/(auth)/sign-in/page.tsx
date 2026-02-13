@@ -23,7 +23,7 @@ export default function SignInPage() {
 
   const onSubmit = async (values: SignInValues) => {
     console.log(values);
-    router.push("/");
+    router.push("/news");
   };
 
   return (
