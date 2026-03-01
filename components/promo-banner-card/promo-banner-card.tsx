@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import { Button } from "../ui/button";
 
 export interface PromoBannerCardProps {
   tag?: string;
@@ -20,21 +21,18 @@ export function PromoBannerCard({
 }: PromoBannerCardProps) {
   const content = (
     <>
-      <span className="inline-block rounded-md bg-amber-900/80 px-2.5 py-1 text-xs font-medium text-white">
-        {tag}
-      </span>
-      <div className="mt-3 flex flex-col gap-0.5">
+      {/* <div className="mt-3 flex flex-col gap-0.5">
         {titleLines.map((line, i) => (
           <p
             key={i}
             className={`text-sm font-bold ${
-              i === 1 ? "text-[#e85d04]" : "text-white"
+              i === 1 ? "text-accent" : "text-white"
             }`}
           >
             {line}
           </p>
         ))}
-      </div>
+      </div> */}
       {imageUrl && (
         <div className="relative mt-4 aspect-video w-full overflow-hidden rounded-md bg-zinc-800">
           <Image
@@ -46,11 +44,16 @@ export function PromoBannerCard({
           />
         </div>
       )}
+      <Button
+        size="sm"
+        className="inline-block max-w-[78px] absolute top-4 left-4 rounded-md bg-amber-900/80 px-2.5 py-1 text-xs font-medium text-white">
+        {tag}
+      </Button>
     </>
   );
 
   return (
-    <article className="flex h-full flex-col rounded-lg border border-zinc-700 bg-[#1A1A1A] p-4">
+    <article className="flex h-full relative flex-col rounded-lg border border-zinc-700 bg-card p-4">
       {href ? (
         <Link href={href} className="flex h-full flex-col transition-opacity hover:opacity-95">
           {content}

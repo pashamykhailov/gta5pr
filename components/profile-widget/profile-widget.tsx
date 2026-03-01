@@ -43,7 +43,7 @@ export function ProfileWidget({
 
       {/* Top right: name + subtitle, overlaid */}
       <div className="absolute right-4 top-4 text-right">
-        <p className="text-sm font-bold text-[#e85d04]">{name}</p>
+        <p className="text-sm font-bold text-accent">{name}</p>
         {subtitle && (
           <p className="mt-0.5 text-xs text-white">{subtitle}</p>
         )}
@@ -51,7 +51,7 @@ export function ProfileWidget({
 
       {/* Bottom right: stats, overlaid */}
       <div className="absolute bottom-4 right-4 text-right">
-        <p className="text-xl font-bold text-[#e85d04]">{statValue}</p>
+        <p className="text-xl font-bold text-accent">{statValue}</p>
         <p className="text-xs text-white">{statLabel}</p>
       </div>
     </article>

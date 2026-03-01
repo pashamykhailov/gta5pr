@@ -21,13 +21,13 @@ export function SidebarListWidget({
   viewAllHref = '/teams',
 }: SidebarListWidgetProps) {
   return (
-    <article className="rounded-lg border border-zinc-700 bg-[#1A1A1A]">
+    <article className="rounded-lg border border-zinc-700 bg-card">
       <div className='p-4'>
         <h2 className="text-sm font-bold text-white">{title}</h2>
         <ul className="mt-3">
           {items.map((item, index) => (
             <li
-              key={item.url}
+              key={item.url + index}
               className={`flex items-center gap-2 py-2 ${
                 index < items.length - 1 ? 'border-b border-zinc-700' : ''
               }`}
@@ -40,7 +40,7 @@ export function SidebarListWidget({
               </span>
               <Link
                 href={item.url}
-                className="text-sm text-white transition-colors hover:text-[#e85d04]"
+                className="text-sm text-white transition-colors hover:text-accent"
               >
                 {item.title}
               </Link>
@@ -51,7 +51,7 @@ export function SidebarListWidget({
       {viewAllHref && (
         <Link
           href={viewAllHref}
-          className="mt-4 flex w-full items-center justify-center rounded-b-md bg-[#e85d04] px-4 py-2.5 text-sm font-medium text-white transition-colors hover:bg-[#d35404]"
+          className="mt-4 flex w-full items-center justify-center rounded-b-md bg-accent px-4 py-2.5 text-sm font-medium text-white transition-colors hover:bg-accent-hover"
         >
           {viewAllText}
         </Link>

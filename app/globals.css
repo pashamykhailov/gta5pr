@@ -3,11 +3,19 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --accent: #FF7A2F;
+  --accent-hover: #E56B28;
+  --card: #1D1D1D;
+  --subheading: #4D4D4D;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  --color-accent: var(--accent);
+  --color-accent-hover: var(--accent-hover);
+  --color-card: var(--card);
+  --color-subheading: var(--subheading);
   --color-sign-in-heading: #dedede;
   --font-sans: var(--font-gilroy), var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);

@@ -21,7 +21,7 @@ export function NewsCard({
   return (
     <Link
       href={href}
-      className="relative flex flex-col overflow-hidden rounded-lg border border-zinc-700 bg-[#1A1A1A] transition-opacity hover:opacity-95"
+      className="relative flex flex-col overflow-hidden rounded-lg border border-zinc-700 bg-card transition-opacity hover:opacity-95"
     >
       <span className="absolute left-4 top-4 z-10 rounded-md bg-zinc-700 px-2.5 py-1 text-xs text-zinc-300">
         {tag}

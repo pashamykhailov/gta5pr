@@ -29,7 +29,7 @@ export default function SignInPage() {
   return (
     <div className="flex min-h-screen">
       {/* Левая панель — оранжевая */}
-      <aside className="hidden w-1/3 flex-col justify-between bg-[#e85d04] p-8 md:flex">
+      <aside className="hidden w-1/3 flex-col justify-between bg-accent p-8 md:flex">
         <div className="flex items-center gap-2 text-white">
           <span className="text-xl font-semibold">GTA5 RP</span>
         </div>

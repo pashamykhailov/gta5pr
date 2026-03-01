@@ -37,9 +37,9 @@ const MOCK_TRANSFERS = [
 
 export default function NewsPage() {
   return (
-    <main className="flex gap-6 p-4 md:p-6">
+    <main className="flex flex-col gap-6 p-4 md:flex-row md:p-6">
       {/* Left sidebar */}
-      <aside className="flex w-full max-w-[280px] shrink-0 flex-col gap-4">
+      <aside className="order-2 flex w-full shrink-0 flex-col gap-4 md:order-1 max-w-[186px]">
         <ProfileWidget
           name="Имя Фамилия"
           subtitle="Игрок недели"
@@ -62,9 +62,9 @@ export default function NewsPage() {
       </aside>
 
       {/* Main: 3 cards */}
-      <div className="min-w-0 flex-1">
-        <div className="grid grid-cols-1 gap-4 md:grid-cols-3">
-          <div className="md:col-span-2 md:row-span-2">
+      <div className="order-1 min-w-0 flex-1 md:order-2">
+        <div className="grid grid-cols-1 gap-4 lg:grid-cols-3">
+          <div className="md:col-span-2 md:row-span-4">
             <PromoBannerCard
               tag="Розыгрыш"
               titleLines={[
@@ -73,27 +73,30 @@ export default function NewsPage() {
                 "на всех серверах GTA5RP",
               ]}
               href="/giveaway"
+              imageUrl="https://d3jvxfsgjxj1vz.cloudfront.net/news/wp-content/uploads/2023/08/12112505/bugatti-chiron-super-sport-golden-era-1-scaled.jpg"
             />
           </div>
-          <div>
+          <div className="md:col-span-2 md:row-span-2 lg:col-span-1">
             <NewsCard
               tag="Новости"
               title="Gucci победители IX Осеннего турнира!"
               href="/news/1"
+              imageUrl="https://st3.depositphotos.com/7677414/16494/i/450/depositphotos_164940980-stock-photo-low-key-golden-trophy-blur.jpg"
             />
           </div>
-          <div>
+          <div className="md:col-span-2 md:row-span-2 lg:col-span-1 lg:col-start-3">
             <NewsCard
               tag="Новости"
               title="Gucci победители IX Осеннего турнира!"
               href="/news/2"
+              imageUrl="https://st3.depositphotos.com/7677414/16494/i/450/depositphotos_164940980-stock-photo-low-key-golden-trophy-blur.jpg"
             />
           </div>
         </div>
       </div>
 
       {/* Right sidebar */}
-      <aside className="flex w-full max-w-[260px] shrink-0 flex-col gap-4">
+      <aside className="order-3 flex w-full shrink-0 flex-col gap-4 max-w-[186px]">
         <MatchesWidget matches={MOCK_MATCHES} />
         <TransfersWidget transfers={MOCK_TRANSFERS} viewAllHref="/transfers" />
       </aside>
