@@ -58,7 +58,7 @@ export default function NewsPage() {
       {/* Main: 3 cards */}
       <div className="order-1 min-w-0 flex-1 md:order-2">
         <div className="grid grid-cols-1 gap-4 lg:grid-cols-3">
-          <div className="md:col-span-2 md:row-span-4">
+          <div className="md:col-span-2 md:row-span-4 max-h-[346px] min-h-[346px]">
             <PromoBannerCard
               tag="Розыгрыш"
               titleContent={
@@ -68,7 +68,7 @@ export default function NewsPage() {
               imageUrl="https://d3jvxfsgjxj1vz.cloudfront.net/news/wp-content/uploads/2023/08/12112505/bugatti-chiron-super-sport-golden-era-1-scaled.jpg"
             />
           </div>
-          <div className="md:col-span-2 md:row-span-2 lg:col-span-1">
+          <div className="flex h-[165px] md:col-span-2 md:row-span-2 lg:col-span-1">
             <NewsCard
               tag="Новости"
               titleContent={
@@ -80,7 +80,7 @@ export default function NewsPage() {
               imageUrl="https://st3.depositphotos.com/7677414/16494/i/450/depositphotos_164940980-stock-photo-low-key-golden-trophy-blur.jpg"
             />
           </div>
-          <div className="md:col-span-2 md:row-span-2 lg:col-span-1 lg:col-start-3">
+          <div className="flex h-[165px] md:col-span-2 md:row-span-2 lg:col-span-1 lg:col-start-3">
             <NewsCard
               tag="Новости"
               titleContent={
