@@ -1,39 +1,33 @@
-import { MatchesWidget } from "@/components/matches-widget";
-import { NewsCard } from "@/components/news-card";
-import { ProfileWidget } from "@/components/profile-widget";
-import { PromoBannerCard } from "@/components/promo-banner-card";
-import { SidebarListWidget } from "@/components/sidebar-list-widget";
-import { TransfersWidget } from "@/components/transfers-widget";
+import { MatchesWidget } from '@/components/matches-widget';
+import { NewsCard } from '@/components/news-card';
+import { ProfileWidget } from '@/components/profile-widget';
+import { PromoBannerCard } from '@/components/promo-banner-card';
+import { SidebarListWidget } from '@/components/sidebar-list-widget';
+import { TransfersWidget } from '@/components/transfers-widget';
 
 const TEAM_RATING_ITEMS = [
-  { title: "Gucci", url: "/teams/gucci" },
-  { title: "Gucci", url: "/teams/gucci" },
-  { title: "Gucci", url: "/teams/gucci" },
-  { title: "Gucci", url: "/teams/gucci" },
-  { title: "Gucci", url: "/teams/gucci" },
+  { title: 'Gucci', url: '/teams/gucci' },
+  { title: 'Gucci', url: '/teams/gucci' },
+  { title: 'Gucci', url: '/teams/gucci' },
+  { title: 'Gucci', url: '/teams/gucci' },
+  { title: 'Gucci', url: '/teams/gucci' },
 ];
 
 const TOURNAMENTS_ITEMS = [
-  { title: "Champ1", url: "/tournaments/champ1" },
-  { title: "Champ2", url: "/tournaments/champ2" },
-  { title: "Champ3", url: "/tournaments/champ3" },
-  { title: "Champ4", url: "/tournaments/champ4" },
-  { title: "Champ5", url: "/tournaments/champ5" },
+  { title: 'Champ1', url: '/tournaments/champ1' },
+  { title: 'Champ2', url: '/tournaments/champ2' },
+  { title: 'Champ3', url: '/tournaments/champ3' },
+  { title: 'Champ4', url: '/tournaments/champ4' },
+  { title: 'Champ5', url: '/tournaments/champ5' },
 ];
 
 const MOCK_MATCHES = [
-  { teamA: "Gucci", teamB: "Gucci", time: "21:30" },
-  { teamA: "Gucci", teamB: "Gucci", time: "21:30" },
-  { teamA: "Gucci", teamB: "Gucci", time: "21:30" },
+  { teamA: 'Gucci', teamB: 'Gucci', time: '21:30' },
+  { teamA: 'Gucci', teamB: 'Gucci', time: '21:30' },
+  { teamA: 'Gucci', teamB: 'Gucci', time: '21:30' },
 ];
 
-const MOCK_TRANSFERS = [
-  {},
-  {},
-  {},
-  {},
-  {},
-];
+const MOCK_TRANSFERS = [{}, {}, {}, {}, {}];
 
 export default function NewsPage() {
   return (
@@ -67,11 +61,9 @@ export default function NewsPage() {
           <div className="md:col-span-2 md:row-span-4">
             <PromoBannerCard
               tag="Розыгрыш"
-              titleLines={[
-                "Розыгрыш 5-ти",
-                "Bugatti Chiron",
-                "на всех серверах GTA5RP",
-              ]}
+              titleContent={
+                <p className='font-bold text-xl'>Розыгрыш 5-ти <br /> <span className='text-accent'>Bugatti Chiron</span> <br /> на всех серверах GTA5RP</p>
+              }
               href="/giveaway"
               imageUrl="https://d3jvxfsgjxj1vz.cloudfront.net/news/wp-content/uploads/2023/08/12112505/bugatti-chiron-super-sport-golden-era-1-scaled.jpg"
             />
@@ -79,7 +71,11 @@ export default function NewsPage() {
           <div className="md:col-span-2 md:row-span-2 lg:col-span-1">
             <NewsCard
               tag="Новости"
-              title="Gucci победители IX Осеннего турнира!"
+              titleContent={
+                <h3 className="text-sm font-bold text-white">
+                  Gucci победители <br /> IX Осеннего турнира!
+                </h3>
+              }
               href="/news/1"
               imageUrl="https://st3.depositphotos.com/7677414/16494/i/450/depositphotos_164940980-stock-photo-low-key-golden-trophy-blur.jpg"
             />
@@ -87,7 +83,11 @@ export default function NewsPage() {
           <div className="md:col-span-2 md:row-span-2 lg:col-span-1 lg:col-start-3">
             <NewsCard
               tag="Новости"
-              title="Gucci победители IX Осеннего турнира!"
+              titleContent={
+                <h3 className="text-sm font-bold text-white">
+                  Gucci победители <br /> IX Осеннего турнира!
+                </h3>
+              }
               href="/news/2"
               imageUrl="https://st3.depositphotos.com/7677414/16494/i/450/depositphotos_164940980-stock-photo-low-key-golden-trophy-blur.jpg"
             />

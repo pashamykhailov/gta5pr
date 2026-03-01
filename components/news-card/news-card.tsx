@@ -2,10 +2,12 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import type { ReactNode } from "react";
 
 export interface NewsCardProps {
   tag?: string;
-  title: string;
+  /** Контент блока под картинкой (любой JSX, например заголовок) */
+  titleContent?: ReactNode;
   href: string;
   imageUrl?: string;
   imageAlt?: string;
@@ -13,7 +15,7 @@ export interface NewsCardProps {
 
 export function NewsCard({
   tag = "Новости",
-  title,
+  titleContent,
   href,
   imageUrl,
   imageAlt,
@@ -26,11 +28,11 @@ export function NewsCard({
       <span className="absolute left-4 top-4 z-10 rounded-md bg-zinc-700 px-2.5 py-1 text-xs text-zinc-300">
         {tag}
       </span>
-      <div className="relative aspect-[4/3] w-full shrink-0 overflow-hidden bg-zinc-800">
+      <div className="aspect-[4/3] w-full shrink-0 overflow-hidden bg-zinc-800">
         {imageUrl ? (
           <Image
             src={imageUrl}
-            alt={imageAlt ?? title}
+            alt={imageAlt ?? ""}
             fill
             className="object-cover"
             sizes="(max-width: 768px) 100vw, 280px"
@@ -48,8 +50,8 @@ export function NewsCard({
           </div>
         )}
       </div>
-      <div className="flex flex-1 flex-col p-4">
-        <h3 className="text-sm font-bold text-white">{title}</h3>
+      <div className="flex flex-1 flex-col p-4 absolute bottom-0 left-0 right-0">
+        {titleContent}
       </div>
     </Link>
   );
