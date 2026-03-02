@@ -1,6 +1,6 @@
 'use client';
 
-import Image from 'next/image';
+import { WhiteHeading } from '@/components/white-heading';
 
 export interface MatchItem {
   teamA: string;
@@ -28,16 +28,7 @@ export function MatchesWidget({
 }: MatchesWidgetProps) {
   return (
     <article className="rounded-lg border border-zinc-700 bg-card pb-2">
-      <h2 className="inline-flex w-full text-xs items-center gap-2 rounded-md bg-zinc-200 px-3 py-2 text-sm font-600 text-zinc-800 shadow-sm">
-        <Image
-          src="/img/swords.svg"
-          alt=""
-          width={10}
-          height={10}
-          aria-hidden
-        />
-        {title}
-      </h2>
+      <WhiteHeading imageSrc="/img/swords.svg" title={title} />
       <ul className="mt-3 space-y-0 px-2">
         {matches.map((match, index) => (
           <li
@@ -47,7 +38,7 @@ export function MatchesWidget({
             }`}
           >
             <div className='flex flex-col'>
-              <div className="flex mb-1">
+              <div className="flex mb-2">
                 <EmblemPlaceholder />
                 <span className="pl-1 text-sm text-white self-center">
                   {match.teamA}

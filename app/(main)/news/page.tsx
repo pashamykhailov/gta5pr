@@ -1,5 +1,8 @@
+import { Divider } from '@/components/divider';
 import { MatchesWidget } from '@/components/matches-widget';
 import { NewsCard } from '@/components/news-card';
+import { NewsFeed } from '@/components/news-feed';
+import type { NewsFeedItemData } from '@/components/news-feed';
 import { ProfileWidget } from '@/components/profile-widget';
 import { PromoBannerCard } from '@/components/promo-banner-card';
 import { SidebarListWidget } from '@/components/sidebar-list-widget';
@@ -28,6 +31,42 @@ const MOCK_MATCHES = [
 ];
 
 const MOCK_TRANSFERS = [{}, {}, {}, {}, {}];
+
+const MOCK_NEWS_FEED: NewsFeedItemData[] = [
+  {
+    newsText: 'Победа GUCCI на турнире',
+    timeAdded: '5 минут назад',
+    commentCount: 150,
+    href: '/news/1',
+    imageUrl:
+      'https://st3.depositphotos.com/7677414/16494/i/450/depositphotos_164940980-stock-photo-low-key-golden-trophy-blur.jpg',
+  },
+  {
+    newsText: 'Победа GUCCI на турнире!',
+    description:
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.',
+    timeAdded: '5 минут назад',
+    commentCount: 150,
+    href: '/news/2',
+    isHighlighted: true,
+    imageUrl:
+      'https://st3.depositphotos.com/7677414/16494/i/450/depositphotos_164940980-stock-photo-low-key-golden-trophy-blur.jpg',
+  },
+  {
+    newsText: 'Новый сезон турниров стартует на следующей неделе',
+    timeAdded: '1 час назад',
+    commentCount: 89,
+    href: '/news/3',
+  },
+  {
+    newsText: 'Обновление правил сервера',
+    timeAdded: '2 часа назад',
+    commentCount: 42,
+    href: '/news/4',
+    imageUrl:
+      'https://st3.depositphotos.com/7677414/16494/i/450/depositphotos_164940980-stock-photo-low-key-golden-trophy-blur.jpg',
+  },
+];
 
 export default function NewsPage() {
   return (
@@ -93,6 +132,10 @@ export default function NewsPage() {
             />
           </div>
         </div>
+          <Divider className='mt-5 mb-5' title='Новости на сегодня' />
+          <NewsFeed items={MOCK_NEWS_FEED} />
+          <Divider className='mt-5 mb-5' title='Новости на вчера' />
+          <NewsFeed items={MOCK_NEWS_FEED} />
       </div>
 
       {/* Right sidebar */}
