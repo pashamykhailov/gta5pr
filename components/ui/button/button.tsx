@@ -5,7 +5,7 @@ import { cn } from "@/lib/cn";
 
 export interface ButtonProps
   extends React.ButtonHTMLAttributes<HTMLButtonElement> {
-  variant?: "primary" | "secondary";
+  variant?: "primary" | "secondary" | "accent";
   size?: "default" | "sm" | "lg";
 }
 
@@ -24,6 +24,8 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
             "bg-zinc-700 text-[#DEDEDE] hover:bg-zinc-600 focus-visible:ring-zinc-500",
           variant === "secondary" &&
             "border border-zinc-600 bg-transparent text-[#DEDEDE] hover:bg-zinc-800 focus-visible:ring-zinc-500",
+          variant === "accent" &&
+            "bg-accent text-white hover:bg-accent-hover focus-visible:ring-accent",
           size === "default" && "px-4 py-1",
           size === "sm" && "h-8 rounded px-3 text-sm",
           size === "lg" && "h-12 rounded-md px-6 text-base",
