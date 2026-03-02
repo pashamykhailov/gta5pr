@@ -6,6 +6,8 @@ import type { NewsFeedItemData } from '@/components/news-feed';
 import { ProfileWidget } from '@/components/profile-widget';
 import { PromoBannerCard } from '@/components/promo-banner-card';
 import { SidebarListWidget } from '@/components/sidebar-list-widget';
+import { StreamersSection } from '@/components/streamers-section';
+import type { StreamerItem } from '@/components/streamers-section';
 import { TransfersWidget } from '@/components/transfers-widget';
 
 const TEAM_RATING_ITEMS = [
@@ -65,6 +67,49 @@ const MOCK_NEWS_FEED: NewsFeedItemData[] = [
     href: '/news/4',
     imageUrl:
       'https://st3.depositphotos.com/7677414/16494/i/450/depositphotos_164940980-stock-photo-low-key-golden-trophy-blur.jpg',
+  },
+];
+
+const MOCK_STREAMERS: StreamerItem[] = [
+  {
+    imageUrl:
+      'https://images.unsplash.com/photo-1598387993281-cecf8b71a8f8?w=400&h=225&fit=crop',
+    name: '7ANGELINKA',
+    lastOnline: '1 час назад',
+    viewerCount: 7425,
+    href: '/streams/1',
+  },
+  {
+    imageUrl:
+      'https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=400&h=225&fit=crop',
+    name: 'STREAMER_PRO',
+    lastOnline: '15 минут назад',
+    viewerCount: 3200,
+    href: '/streams/2',
+  },
+  {
+    imageUrl:
+      'https://images.unsplash.com/photo-1542751371-adc38448a05e?w=400&h=225&fit=crop',
+    name: 'GTA5_LIVE',
+    lastOnline: '2 часа назад',
+    viewerCount: 5890,
+    href: '/streams/3',
+  },
+  {
+    imageUrl:
+      'https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?w=400&h=225&fit=crop',
+    name: 'RP_LEGEND',
+    lastOnline: '30 минут назад',
+    viewerCount: 4100,
+    href: '/streams/4',
+  },
+  {
+    imageUrl:
+      'https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=400&h=225&fit=crop',
+    name: 'NIGHT_STREAM',
+    lastOnline: '45 минут назад',
+    viewerCount: 2150,
+    href: '/streams/5',
   },
 ];
 
@@ -136,6 +181,13 @@ export default function NewsPage() {
           <NewsFeed items={MOCK_NEWS_FEED} />
           <Divider className='mt-5 mb-5' title='Новости на вчера' />
           <NewsFeed items={MOCK_NEWS_FEED} />
+          <Divider className='mt-5 mb-5' title='Прямые трансляции' />
+          <StreamersSection
+            streamers={MOCK_STREAMERS}
+            viewAllHref="/streams"
+            viewAllTitle="Смотреть все"
+            viewAllSubtitle="прямые трансляции"
+          />
       </div>
 
       {/* Right sidebar */}
